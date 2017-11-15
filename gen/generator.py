@@ -263,11 +263,11 @@ def decoder(gen_config):
 
             for query, answer, resp in zip(batch_source_encoder, batch_source_decoder, resps):
 
-                answer_str = " ".join([str(rev_vocab[an]) for an in answer][:-1])
+                answer_str = " ".join([rev_vocab[an].decode("utf-8") for an in answer][:-1])
                 disc_train_answer.write(answer_str)
                 disc_train_answer.write("\n")
 
-                query_str = " ".join([str(rev_vocab[qu]) for qu in query])
+                query_str = " ".join([rev_vocab[qu].decode("utf-8") for qu in query])
                 disc_train_query.write(query_str)
                 disc_train_query.write("\n")
 
