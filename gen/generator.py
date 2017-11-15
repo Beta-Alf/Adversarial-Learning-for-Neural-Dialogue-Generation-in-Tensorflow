@@ -232,7 +232,8 @@ def decoder(gen_config):
         disc_train_gen = open("train.gen", "w")
 
         num_step = 0
-        while num_step < 10000:
+        # TODO (Florian): make this configurable
+        while num_step < 40:
             print("generating num_step: ", num_step)
             random_number_01 = np.random.random_sample()
             bucket_id = min([i for i in xrange(len(train_buckets_scale))
